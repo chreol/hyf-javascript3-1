@@ -1,0 +1,44 @@
+body {
+  margin: 0 auto;
+  max-width: 960px;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  /* background-color: grey; */
+}
+
+h2 {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#search {
+  padding: 8px;
+  width: 100%;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+#btn,
+#resetBtn {
+  margin: 10px;
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  border-bottom: 3px solid blue; 
+}
+
+#resetBtn {
+  border-bottom-color: red;
+}
+
+#output {
+  width: 100%;
+}

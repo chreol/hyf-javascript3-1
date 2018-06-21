@@ -70,6 +70,6 @@ function createDOM(linkname) {
 
   let h4 = document.createElement('h4');
   document.body.appendChild(h4);
-  h4.innerHTML = `Contributors: ${linkname.contributors_url}`;
+  h4.innerHTML = `Contributors: <a href="${linkname.contributors_url}" target="_blank">open in new tab</a>`;
   console.log(h4.innerHTML);
 }

@@ -66,10 +66,36 @@ function searchTerm(term) {
   }
 }
 function createDOM(linkname) {
-  console.log("Rendering repo page");
 
-  let h4 = document.createElement('h4');
-  document.body.appendChild(h4);
-  h4.innerHTML = `Contributors: <a href="${linkname.contributors_url}" target="_blank">open in new tab</a>`;
-  console.log(h4.innerHTML);
+  fetch(linkname.contributors_url)
+    .then(request => request.json())
+    .then(response => {
+
+      let wrap = document.createElement('div');
+      document.body.appendChild(wrap);
+      wrap.style.display = 'flex';
+      wrap.style.flexFlow = 'row wrap';
+      
+      response.map(author => {
+
+        let div = document.createElement('div');
+        let img = document.createElement('img');
+        let h4 = document.createElement('h4');
+
+        img.src = author.avatar_url;
+        h4.innerHTML = `${author.login}`;
+        
+        wrap.appendChild(div);
+      
+        div.style.display = 'flex';
+        div.style.flexBasis = '200px';
+        
+        div.appendChild(img);
+        img.style.width = '75px';
+        img.style.height = '75px';
+
+        div.appendChild(h4);
+        h4.style.padding = '15px';
+      })
+    })
 }

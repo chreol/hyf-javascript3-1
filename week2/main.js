@@ -65,16 +65,22 @@ function searchTerm(term) {
     } 
   }
 }
+
 function createDOM(linkname) {
 
   fetch(linkname.contributors_url)
     .then(request => request.json())
     .then(response => {
 
+      let contributorsList = document.createElement('h3');
+      document.body.appendChild(contributorsList);
+      contributorsList.innerHTML = 'Contributors list:'
+
       let wrap = document.createElement('div');
       document.body.appendChild(wrap);
       wrap.style.display = 'flex';
       wrap.style.flexFlow = 'row wrap';
+      wrap.style.justifyContent = 'space-between';
       
       response.map(author => {
 
@@ -93,6 +99,7 @@ function createDOM(linkname) {
         div.appendChild(img);
         img.style.width = '75px';
         img.style.height = '75px';
+        img.style.borderRadius = '50%';
 
         div.appendChild(h4);
         h4.style.padding = '15px';

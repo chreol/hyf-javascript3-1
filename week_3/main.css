@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 960px;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+header {
+  padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  background-color: blueviolet;
+}
+input {
+  margin: 10px;
+  padding: 10px;
+ flex: 1;
+  height: 30px;
+  border-radius: 8px;
+}
+#search {
+  margin-left: auto; 
+  width: 100px;
+  height: 30px;
+}
+#userCard {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  background-color: tomato;
+}
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+section {
+  display: flex;
+  flex-flow: row nowrap;
+}
+aside {
+  padding: 10px;
+}
+#wrap {
+  flex: 1;
+  background-color: teal;
+}
+#userReposList {
+  padding: 20px;
+  padding-left: 40px;
+  font-size: 20px;
+}
